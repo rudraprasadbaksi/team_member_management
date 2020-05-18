@@ -47,7 +47,7 @@ python manage.py test members
 ```
 
 # Preparing for Deployment
-few changes were made:
+few changes were made in the settings.py file:
 1. Debug = False # Done to prevent the api from leaking information
 2. ALLOWED_HOSTS = ['*']
 3. X_FRAME_OPTIONS = 'DENY' (This was done for Clickjacking protection)
