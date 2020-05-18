@@ -34,6 +34,11 @@ pytz==2020.1
 ```
 nginx server was also installed
 
+AWS url:
+```
+http://3.23.97.227:8000/api/member/
+```
+
 ## Running the tests
 
 Tests were written in the "tests.py" file in the "members" app. To run the test one can make use of the following command:
@@ -45,4 +50,12 @@ python manage.py test members
 few changes were made:
 1. Debug = False # Done to prevent the api from leaking information
 2. ALLOWED_HOSTS = ['*']
+3. X_FRAME_OPTIONS = 'DENY' (This was done for Clickjacking protection)
+4. CSRF_COOKIE_SECURE = True (the CSRF cookie will be marked as “secure” & the cookie is only sent under an HTTPS connection) 
+5. SESSION_COOKIE_SECURE = True(the Session cookie will be marked as “secure” & the cookie is only sent under an HTTPS connection)
+
+The django.middleware.security.SecurityMiddleware provides several security enhancements to the request/response cycle. Each one can be independently enabled or disabled with a setting
+
+6. SECURE_BROWSER_XSS_FILTER = True
+7. SECURE_CONTENT_TYPE_NOSNIFF = True
 
