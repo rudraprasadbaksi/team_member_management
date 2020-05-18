@@ -1,6 +1,9 @@
-# Project Title
+# Team Member Management
 
-One Paragraph of project description goes here
+The goal of the project is to implement an HTTP API to support a team-member management
+application. The team member data should be persisted in a Postgres database. The application
+needs to support listing team members, adding a new team member, editing a team member,
+and deleting a team member.
 
 ## Getting Started
 
