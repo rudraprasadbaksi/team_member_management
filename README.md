@@ -13,6 +13,17 @@ The Project was implemented on Django using REST Framework and hosted on AWS
 
 What things one need's to install(The versions may vary)
 
+For the local machine following prerequisites should be installed:
+
+```
+Django==2.0.7
+djangorestframework==3.11.0
+psycopg2==2.8.5
+pytz==2020.1
+```
+
+For the AWS hosting following prerequistes should be installed:
+
 ```
 Django==2.0.7
 djangorestframework==3.11.0
@@ -21,6 +32,7 @@ pkg-resources==0.0.0
 psycopg2-binary==2.8.5
 pytz==2020.1
 ```
+nginx server was also installed
 
 ## Running the tests
 
@@ -30,4 +42,7 @@ python manage.py test members
 ```
 
 # Preparing for Deployment
+few changes were made:
+1. Debug = False # Done to prevent the api from leaking information
+2. ALLOWED_HOSTS = ['*']
 
